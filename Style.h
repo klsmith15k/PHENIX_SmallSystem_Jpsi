@@ -11,8 +11,8 @@ void SetStyle(){
 	gStyle->SetOptStat(0);
 	gStyle->SetPadTickX(1);
 	gStyle->SetPadTickY(1);
-	gStyle->SetLegendFont(63);
-	gStyle->SetLegendTextSize(20);
+	gStyle->SetLegendFont(43);
+	gStyle->SetLegendTextSize(18);
 
 }
 

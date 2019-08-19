@@ -10,7 +10,9 @@ void Draw_dNdy_pAu(){
 	const int cent_per_min[ncent] = {0, 5, 10, 0, 20, 40, 60};
 	const int cent_per_max[ncent] = {5, 10, 20, 20, 40, 60, 84};
 
-	const int nColor[ncent] = {1, 2, 4, 6, kGreen+2, 1, 2};
+	//const int nColor[ncent] = {1, 2, 4, 6, kGreen+2, 1, 2};
+	//const int nMarker_pAu[ncentbin] = {20, 24, 21, 25, 25, 22, 26};
+	const int nColor[ncent] = {1, 2, 4, 6, 6, kGreen+2, kOrange+2};
 
 	const int narm = 2;
 	const int nybin = 4;
@@ -285,25 +287,6 @@ void Draw_dNdy_pAu(){
 		gy_xec_pp15_int[iarm]->Draw("p");
 	}
 
-	TCanvas *c10 = new TCanvas("c10","c10",1.1*2*400,1*400);
-	c10->Divide(2,1);
-	c10->cd(1);
-	SetPadStyle();
-	htmp = (TH1F*)gPad->DrawFrame(-3,0,3,1.6e-6);
-	SetHistoStyle("y","B_{ll}dN/dy");
-
-	for (int iarm=0; iarm<narm; iarm++){
-		gy_pp15_sys[iarm]->Draw("2");
-		gy_pp15[iarm]->Draw("p");
-
-		gy_pp15_int_sys[iarm]->SetMarkerColor(2);
-		gy_pp15_int_sys[iarm]->SetLineColor(2);
-		gy_pp15_int_sys[iarm]->Draw("2");
-		gy_pp15_int[iarm]->SetMarkerColor(2);
-		gy_pp15_int[iarm]->SetLineColor(2);
-		gy_pp15_int[iarm]->Draw("p");
-	}
-
 	//return;
 
 
@@ -439,6 +422,7 @@ void Draw_dNdy_pAu(){
 				Y_syserr[icent][iarm][iy] += sys_var[iarm]*sys_var[iarm];
 				Y_syserr[icent][iarm][iy] += sys_acceff[iarm]*sys_acceff[iarm];
 				Y_syserr[icent][iarm][iy] += sys_trigeff_y[icent][iarm][iy]*sys_trigeff_y[icent][iarm][iy];
+				Y_syserr[icent][iarm][iy] += sys_pol_pp[iarm][iy]*sys_pol_pp[iarm][iy];
 				Y_syserr[icent][iarm][iy] = Y[icent][iarm][iy] * sqrt(Y_syserr[icent][iarm][iy]); 
 
 				rpA[icent][iarm][iy] = Y[icent][iarm][iy] / Y_pp15[iarm][iy];
@@ -513,67 +497,72 @@ void Draw_dNdy_pAu(){
 
 	//return;
 
-	c10->cd(1);
+	TCanvas *c10 = new TCanvas("c10","c10",1.3*3*300,2*300);
+	c10->Divide(3,2);
 
+	TCanvas *c12 = new TCanvas("c12","c12",1.3*3*300,2*300);
+	c12->Divide(3,2);
+
+	int count = 0;
 	for (int icent=0; icent<ncent; icent++){
+
+		if ( icent==3 ) continue;
+
+		c10->cd(count+1);
+		SetPadStyle();
+		gPad->SetTopMargin(0.08);
+		gPad->SetRightMargin(0.015);
+		gPad->SetLeftMargin(0.14);
+		gPad->SetBottomMargin(0.14);
+		htmp = (TH1F*)gPad->DrawFrame(-3,0,3,2.0e-6);
+		SetHistoStyle("y","B_{ll}dN/dy","",22,18);
+		htmp->GetYaxis()->SetTitleOffset(1.7);
+		htmp->GetXaxis()->SetTitleOffset(1.6);
 		for (int iarm=0; iarm<narm; iarm++){
+			gy_pp15_sys[iarm]->Draw("2");
+			gy_pp15[iarm]->Draw("p");
+
 			gy_sys[icent][iarm]->Draw("2");
 			gy[icent][iarm]->Draw("p");
 		}
-	}
 
-	//return;
-
-	c10->cd(2);
-
-	SetPadStyle();
-	htmp = (TH1F*)gPad->DrawFrame(-3,0,3,2.0);
-	SetHistoStyle("y","B_{ll}dN/dy");
-
-	TLine *line_rap = new TLine(-3,1,3,1);
-	line_rap->SetLineWidth(2);
-	line_rap->SetLineStyle(2);
-	line_rap->Draw();
-
-	for (int icent=0; icent<ncent; icent++){
-		for (int iarm=0; iarm<narm; iarm++){
-			gR_sys[icent][iarm]->Draw("2");
-			gR[icent][iarm]->Draw("p");
+		{
+			TLegend *leg = new TLegend(0.20,0.68,0.9,0.88);
+			leg->SetFillStyle(0);
+			leg->SetBorderSize(0);
+			le = leg->AddEntry("","p+Au #sqrt{s_{NN}}=200 GeV","h");
+			le = leg->AddEntry("","Inclusive J/#psi","h");
+			le = leg->AddEntry("",Form("%d%c-%d%c",cent_per_min[icent],'%',cent_per_max[icent],'%'),"h");
+			leg->Draw();
 		}
-	}
 
-	{
-		TLegend *leg = new TLegend(0.10,0.75,0.5,0.90);
-		leg->SetFillStyle(0);
-		leg->SetBorderSize(0);
-		le = leg->AddEntry("","p+Au #sqrt{s_{NN}}=200 GeV","");
-		le = leg->AddEntry("","J/#psi#rightarrow#mu#mu","");
-		leg->Draw();
-	}
+		{
+			TLegend *leg = new TLegend(0.6,0.68,0.93,0.88);
+			leg->SetFillStyle(0);
+			leg->SetBorderSize(0);
+			le = leg->AddEntry("","","");
+			le = leg->AddEntry(gy[icent][0],"p+Au/#LTN_{coll}#GT","P");
+			le = leg->AddEntry(gy_pp15[0],"p+p","P");
+			leg->Draw();
+		}
 
-	//return;
-
-	TCanvas *c12 = new TCanvas("c12","c12",1.3*4*250,2*250);
-	c12->Divide(4,2);
-
-	for (int icent=0; icent<ncent; icent++){
-		c12->cd(icent+1);
+		c12->cd(count+1);
 		SetPadStyle();
 		gPad->SetRightMargin(0.015);
-		gPad->SetLeftMargin(0.17);
-		gPad->SetBottomMargin(0.16);
+		gPad->SetLeftMargin(0.14);
+		gPad->SetBottomMargin(0.14);
 		htmp = (TH1F*)gPad->DrawFrame(-3,0,3,2.0);
 		SetHistoStyle("y","R_{AB}","",22,18);
 		htmp->GetYaxis()->SetTitleOffset(1.7);
 		htmp->GetXaxis()->SetTitleOffset(1.6);
 
 		{
-			TLegend *leg = new TLegend(0.20,0.65,0.9,0.90);
+			TLegend *leg = new TLegend(0.20,0.70,0.9,0.90);
 			leg->SetFillStyle(0);
 			leg->SetBorderSize(0);
 			le = leg->AddEntry("","p+Au #sqrt{s_{NN}}=200 GeV","h");
-			le = leg->AddEntry("","J/#psi#rightarrow#mu#mu","h");
-			le = leg->AddEntry("",Form("%d-%d%c Centrality",cent_per_min[icent],cent_per_max[icent],'%'),"h");
+			le = leg->AddEntry("","Inclusive J/#psi","h");
+			le = leg->AddEntry("",Form("%d%c-%d%c",cent_per_min[icent],'%',cent_per_max[icent],'%'),"h");
 			leg->Draw();
 
 			TLine *line = new TLine(-3, 1, 3, 1);
@@ -591,6 +580,7 @@ void Draw_dNdy_pAu(){
 			gR_sys[icent][iarm]->Draw("2");
 			gR[icent][iarm]->Draw("p");
 		}
+		count++;
 	}
 
 	//return;

@@ -49,11 +49,9 @@ void Draw_RAB_Ncoll(){
 
 	}//iarm
 
-	TCanvas *c13 = new TCanvas("c13","c13",1.3*2*400,400);
-	c13->Divide(2,1);
-
+	TCanvas *c13[narm];
 	for (int iarm=0; iarm<narm; iarm++){
-		c13->cd(iarm+1);
+		c13[iarm] = new TCanvas(Form("c13_arm%d",iarm),Form("c13_arm%d",iarm),1.3*1*400,400);
 		SetPadStyle();
 		gPad->SetRightMargin(0.03);
 		gPad->SetLeftMargin(0.14);
@@ -64,10 +62,10 @@ void Draw_RAB_Ncoll(){
 		htmp->GetXaxis()->SetTitleOffset(1.0);
 
 		{
-			TLegend *leg = new TLegend(0.10,0.70,0.4,0.93);
+			TLegend *leg = new TLegend(0.10,0.73,0.4,0.93);
 			leg->SetFillStyle(0);
 			leg->SetBorderSize(0);
-			le = leg->AddEntry("","J/#psi#rightarrow#mu#mu","");
+			le = leg->AddEntry("","Inclusive J/#psi","");
 			le = leg->AddEntry("","#sqrt{s_{NN}}=200 GeV","");
 			if ( iarm==0 ){
 				le = leg->AddEntry("","-2.2<y<-1.2, Au/Al-going","");
@@ -86,7 +84,7 @@ void Draw_RAB_Ncoll(){
 			box->Draw();
 		}
 		{
-			TLegend *leg = new TLegend(0.65,0.70,0.9,0.93);
+			TLegend *leg = new TLegend(0.65,0.73,0.9,0.93);
 			leg->SetFillStyle(0);
 			leg->SetBorderSize(0);
 			leg->AddEntry(hRAB_Ncoll_pAl[iarm],"p+Al","P");
