@@ -17,25 +17,40 @@ void Draw_ptsq()
 	bool pt_squared = 1;
 
 
-	double ncoll_pAu[7] = {9.7, 8.4, 7.4, 8.2, 6.1, 4.4, 2.6};
+	//	double ncoll_pAu[7] = {9.7, 8.4, 7.4, 8.2, 6.1, 4.4, 2.6};
+	double ncoll_pAu[6] = {9.7, 8.4, 7.4, 6.1, 4.4, 2.6};
 	double ncoll_HeAu[3] = {22.3,14.8,5.4833};
 	double ncoll_pAl[3] = {3.35, 2.3, 1.7};
 
-	//For pt squared plots -previosu values (for preliminary)
-	double pAu_N_ncoll[7] = {3.57363, 3.53415, 3.55327, 3.54771, 3.48693, 3.3936, 3.25398};
-	double pAu_S_ncoll[7] = {3.60433, 3.30734, 3.3847, 3.52066, 3.42589, 3.33675, 3.38347};
+	//without 0-20% point not included
+	double pAu_N_ptsq[6] = {3.57363, 3.53415, 3.55327, 3.48693, 3.3936, 3.25398};
+	double pAu_S_ptsq[6] = {3.60433, 3.30734, 3.3847, 3.42589, 3.33675, 3.38347};
 
-	double pAu_N_stat[7] = {0.212155, 0.212712, 0.157712, 0.123424, 0.124755, 0.134495, 0.147847};
-	double pAu_S_stat[7] = {0.241367, 0.226709, 0.184654, 0.131978, 0.148624, 0.197885, 0.234599};
+	double pAu_N_stat[6] = {0.212155, 0.212712, 0.157712, 0.124755, 0.134495, 0.147847};
+	double pAu_S_stat[6] = {0.241367, 0.226709, 0.184654, 0.148624, 0.197885, 0.234599};
 
-	double pAu_N_sys_up[7] = {0.234261, 0.235853, 0.23978, 0.239401, 0.226316, 0.233597, 0.224206};
-	double pAu_S_sys_up[7] = {0.239434, 0.224555, 0.244746, 0.241754, 0.242928, 0.22707, 0.246628};
+	double pAu_N_sys_up[6] = {0.234261, 0.235853, 0.23978, 0.226316, 0.233597, 0.224206};
+	double pAu_S_sys_up[6] = {0.239434, 0.224555, 0.244746, 0.242928, 0.22707, 0.246628};
 
-	double pAu_N_sys_down[7] = {0.309948, 0.311179, 0.316446, 0.315486, 0.297948, 0.3056, 0.290851};
-	double pAu_S_sys_down[7] = {0.324666, 0.299797, 0.32719, 0.32471, 0.323413, 0.302212, 0.327299};
+	double pAu_N_sys_down[6] = {0.309948, 0.311179, 0.316446, 0.297948, 0.3056, 0.290851};
+	double pAu_S_sys_down[6] = {0.324666, 0.299797, 0.32719, 0.323413, 0.302212, 0.327299};
+ 
 
-	double HeAu_N_ncoll[3] = {3.48699, 3.31614, 3.33336};
-	double HeAu_S_ncoll[3] = { 3.52125, 3.45499, 3.40047};
+	// with 0-20% point included
+	// double pAu_N_ptsq[7] = {3.57363, 3.53415, 3.55327, 3.54771, 3.48693, 3.3936, 3.25398};
+	// double pAu_S_ptsq[7] = {3.60433, 3.30734, 3.3847, 3.52066, 3.42589, 3.33675, 3.38347};
+
+	// double pAu_N_stat[7] = {0.212155, 0.212712, 0.157712, 0.123424, 0.124755, 0.134495, 0.147847};
+	// double pAu_S_stat[7] = {0.241367, 0.226709, 0.184654, 0.131978, 0.148624, 0.197885, 0.234599};
+
+	// double pAu_N_sys_up[7] = {0.234261, 0.235853, 0.23978, 0.239401, 0.226316, 0.233597, 0.224206};
+	// double pAu_S_sys_up[7] = {0.239434, 0.224555, 0.244746, 0.241754, 0.242928, 0.22707, 0.246628};
+
+	// double pAu_N_sys_down[7] = {0.309948, 0.311179, 0.316446, 0.315486, 0.297948, 0.3056, 0.290851};
+	// double pAu_S_sys_down[7] = {0.324666, 0.299797, 0.32719, 0.32471, 0.323413, 0.302212, 0.327299};
+
+	double HeAu_N_ptsq[3] = {3.48699, 3.31614, 3.33336};
+	double HeAu_S_ptsq[3] = { 3.52125, 3.45499, 3.40047};
 
 	double HeAu_N_stat[3] = {0.217861, 0.238833, 0.244705};
 	double HeAu_S_stat[3] = {0.193704, 0.24534, 0.241158};
@@ -46,8 +61,8 @@ void Draw_ptsq()
 	double HeAu_N_sys_down[3] = {0.360241, 0.344067, 0.331603};
 	double HeAu_S_sys_down[3] = {0.353651, 0.361043, 0.362704};
 
-	double pAl_N_ncoll[3] = {3.22431, 3.32582, 3.07016};
-	double pAl_S_ncoll[3] = {3.12468, 2.96197, 3.12653};
+	double pAl_N_ptsq[3] = {3.22431, 3.32582, 3.07016};
+	double pAl_S_ptsq[3] = {3.12468, 2.96197, 3.12653};
 
 	double pAl_N_stat[3] = {0.129216, 0.139618, 0.132623};
 	double pAl_S_stat[3] = {0.161672, 0.169745, 0.171909};
@@ -62,12 +77,12 @@ void Draw_ptsq()
 	double HeAu_xhigh[3] = {0};
 	double pAl_xlow[3] = {0};
 	double pAl_xhigh[3] = {0};
-	double pAu_xlow[7] = {0};
-	double pAu_xhigh[7] = {0};
+	double pAu_xlow[6] = {0};
+	double pAu_xhigh[6] = {0};
 	double HeAu_ylow[3] = {0};
 	double HeAu_yhigh[3] = {0};
-	double pAu_ylow[7] = {0};
-	double pAu_yhigh[7] = {0};
+	double pAu_ylow[6] = {0};
+	double pAu_yhigh[6] = {0};
 	double pAl_ylow[3] = {0};
 	double pAl_yhigh[3] = {0};
 
@@ -90,7 +105,7 @@ void Draw_ptsq()
 		cout << pAl_xlow[i] << "," << pAl_xhigh[i] << "," << pAl_ylow[i] << "," << pAl_yhigh[i] << endl;
 	}
 
-	for(int i = 0; i < 7; i++)
+	for(int i = 0; i < 6; i++)
 	{
 		pAu_xlow[i] = width;
 		pAu_xhigh[i] = width;
@@ -110,7 +125,7 @@ void Draw_ptsq()
 
 	//pt^2
 	if ( pt_squared ){
-		TGraphAsymmErrors *Ncoll_HeAu_S_sys = new TGraphAsymmErrors(3,ncoll_HeAu,HeAu_S_ncoll,HeAu_xlow,HeAu_xhigh,HeAu_S_sys_down,HeAu_S_sys_up);    TGraphErrors *Ncoll_HeAu_S = new TGraphErrors(3);
+		TGraphAsymmErrors *Ncoll_HeAu_S_sys = new TGraphAsymmErrors(3,ncoll_HeAu,HeAu_S_ptsq,HeAu_xlow,HeAu_xhigh,HeAu_S_sys_down,HeAu_S_sys_up);    TGraphErrors *Ncoll_HeAu_S = new TGraphErrors(3);
 
 		Ncoll_HeAu_S_sys->SetMarkerColor(kBlue);                         Ncoll_HeAu_S->SetMarkerColor(kBlue);
 		Ncoll_HeAu_S_sys->SetLineColor(kBlue);                           Ncoll_HeAu_S->SetLineColor(kBlue);
@@ -120,7 +135,7 @@ void Draw_ptsq()
 		Ncoll_HeAu_S_sys->SetMarkerSize(1);                        Ncoll_HeAu_S->SetMarkerSize(1.);
 		Ncoll_HeAu_S_sys->SetFillStyle(0);
 
-		TGraphAsymmErrors *Ncoll_pAl_S_sys = new TGraphAsymmErrors(3,ncoll_pAl,pAl_S_ncoll,pAl_xlow,pAl_xhigh,pAl_S_sys_down,pAl_S_sys_up);    TGraphErrors *Ncoll_pAl_S = new TGraphErrors(3);
+		TGraphAsymmErrors *Ncoll_pAl_S_sys = new TGraphAsymmErrors(3,ncoll_pAl,pAl_S_ptsq,pAl_xlow,pAl_xhigh,pAl_S_sys_down,pAl_S_sys_up);    TGraphErrors *Ncoll_pAl_S = new TGraphErrors(3);
 
 		Ncoll_pAl_S_sys->SetMarkerColor(kBlack);                         Ncoll_pAl_S->SetMarkerColor(kBlack);
 		Ncoll_pAl_S_sys->SetLineColor(kBlack);                           Ncoll_pAl_S->SetLineColor(kBlack);
@@ -130,7 +145,7 @@ void Draw_ptsq()
 		Ncoll_pAl_S_sys->SetMarkerSize(1.);                        Ncoll_pAl_S->SetMarkerSize(1.);
 		Ncoll_pAl_S_sys->SetFillStyle(0);
 
-		TGraphAsymmErrors *Ncoll_pAu_S_sys = new TGraphAsymmErrors(7,ncoll_pAu,pAu_S_ncoll,pAu_xlow,pAu_xhigh,pAu_S_sys_down,pAu_S_sys_up);     TGraphErrors *Ncoll_pAu_S = new TGraphErrors(7);
+		TGraphAsymmErrors *Ncoll_pAu_S_sys = new TGraphAsymmErrors(6,ncoll_pAu,pAu_S_ptsq,pAu_xlow,pAu_xhigh,pAu_S_sys_down,pAu_S_sys_up);     TGraphErrors *Ncoll_pAu_S = new TGraphErrors(6);
 
 		Ncoll_pAu_S_sys->SetMarkerColor(kRed);                         Ncoll_pAu_S->SetMarkerColor(kRed);
 		Ncoll_pAu_S_sys->SetLineColor(kRed);                           Ncoll_pAu_S->SetLineColor(kRed);
@@ -140,21 +155,21 @@ void Draw_ptsq()
 		Ncoll_pAu_S_sys->SetMarkerSize(1.);                        Ncoll_pAu_S->SetMarkerSize(1.);
 		Ncoll_pAu_S_sys->SetFillStyle(0);
 
-		for(int i = 0; i < 7; i++)
+		for(int i = 0; i < 6; i++)
 		{
-			Ncoll_pAu_S->SetPoint(i,ncoll_pAu[i],pAu_S_ncoll[i]);  
+			Ncoll_pAu_S->SetPoint(i,ncoll_pAu[i],pAu_S_ptsq[i]);  
 			Ncoll_pAu_S->SetPointError(i,0,pAu_S_stat[i]); 
 
 			if(i < 3)
 			{
-				Ncoll_HeAu_S->SetPoint(i,ncoll_HeAu[i],pAu_S_ncoll[i]); 
+				Ncoll_HeAu_S->SetPoint(i,ncoll_HeAu[i],pAu_S_ptsq[i]); 
 				Ncoll_HeAu_S->SetPointError(i,0,HeAu_S_stat[i]); 
-				Ncoll_pAl_S->SetPoint(i,ncoll_pAl[i],pAl_S_ncoll[i]); 
+				Ncoll_pAl_S->SetPoint(i,ncoll_pAl[i],pAl_S_ptsq[i]); 
 				Ncoll_pAl_S->SetPointError(i,0,pAl_S_stat[i]); 
 			}
 		}
 
-		TGraphAsymmErrors *Ncoll_HeAu_N_sys = new TGraphAsymmErrors(3,ncoll_HeAu,HeAu_N_ncoll,HeAu_xlow,HeAu_xhigh,HeAu_N_sys_down,HeAu_N_sys_up);     TGraphErrors *Ncoll_HeAu_N = new TGraphErrors(3);
+		TGraphAsymmErrors *Ncoll_HeAu_N_sys = new TGraphAsymmErrors(3,ncoll_HeAu,HeAu_N_ptsq,HeAu_xlow,HeAu_xhigh,HeAu_N_sys_down,HeAu_N_sys_up);     TGraphErrors *Ncoll_HeAu_N = new TGraphErrors(3);
 
 		Ncoll_HeAu_N_sys->SetMarkerColor(kBlue);                         Ncoll_HeAu_N->SetMarkerColor(kBlue);
 		Ncoll_HeAu_N_sys->SetLineColor(kBlue);                           Ncoll_HeAu_N->SetLineColor(kBlue);
@@ -164,7 +179,7 @@ void Draw_ptsq()
 		Ncoll_HeAu_N_sys->SetMarkerSize(1.);                        Ncoll_HeAu_N->SetMarkerSize(1.);
 		Ncoll_HeAu_N_sys->SetFillStyle(0);
 
-		TGraphAsymmErrors *Ncoll_pAl_N_sys = new TGraphAsymmErrors(3,ncoll_pAl,pAl_N_ncoll,pAl_xlow,pAl_xhigh,pAl_N_sys_down,pAl_N_sys_up);     TGraphErrors *Ncoll_pAl_N = new TGraphErrors(3);
+		TGraphAsymmErrors *Ncoll_pAl_N_sys = new TGraphAsymmErrors(3,ncoll_pAl,pAl_N_ptsq,pAl_xlow,pAl_xhigh,pAl_N_sys_down,pAl_N_sys_up);     TGraphErrors *Ncoll_pAl_N = new TGraphErrors(3);
 
 		Ncoll_pAl_N_sys->SetMarkerColor(kBlack);                         Ncoll_pAl_N->SetMarkerColor(kBlack);
 		Ncoll_pAl_N_sys->SetLineColor(kBlack);                           Ncoll_pAl_N->SetLineColor(kBlack);
@@ -174,7 +189,7 @@ void Draw_ptsq()
 		Ncoll_pAl_N_sys->SetMarkerSize(1.);                        Ncoll_pAl_N->SetMarkerSize(1.);
 		Ncoll_pAl_N_sys->SetFillStyle(0);
 
-		TGraphAsymmErrors *Ncoll_pAu_N_sys = new TGraphAsymmErrors(7,ncoll_pAu,pAu_N_ncoll,pAu_xlow,pAu_xhigh,pAu_N_sys_down,pAu_N_sys_up);     TGraphErrors *Ncoll_pAu_N = new TGraphErrors(7);
+		TGraphAsymmErrors *Ncoll_pAu_N_sys = new TGraphAsymmErrors(6,ncoll_pAu,pAu_N_ptsq,pAu_xlow,pAu_xhigh,pAu_N_sys_down,pAu_N_sys_up);     TGraphErrors *Ncoll_pAu_N = new TGraphErrors(6);
 
 		Ncoll_pAu_N_sys->SetMarkerColor(kRed);                         Ncoll_pAu_N->SetMarkerColor(kRed);
 		Ncoll_pAu_N_sys->SetLineColor(kRed);                           Ncoll_pAu_N->SetLineColor(kRed);
@@ -184,15 +199,16 @@ void Draw_ptsq()
 		Ncoll_pAu_N_sys->SetMarkerSize(1.);                        Ncoll_pAu_N->SetMarkerSize(1.);
 		Ncoll_pAu_N_sys->SetFillStyle(0);
 
-		for(int i = 0; i < 7; i++)
+		for(int i = 0; i < 6; i++)
 		{
-			Ncoll_pAu_N->SetPoint(i,ncoll_pAu[i],pAu_N_ncoll[i]);  // this appears correct.
+			Ncoll_pAu_N->SetPoint(i,ncoll_pAu[i],pAu_N_ptsq[i]);  // this appears correct.
 			Ncoll_pAu_N->SetPointError(i,0,pAu_N_stat[i]); // TGraph with symemtric Type A errors
+
 			if(i < 3)
 			{
-				Ncoll_HeAu_N->SetPoint(i,ncoll_HeAu[i],HeAu_N_ncoll[i]); 
+				Ncoll_HeAu_N->SetPoint(i,ncoll_HeAu[i],HeAu_N_ptsq[i]); 
 				Ncoll_HeAu_N->SetPointError(i,0,HeAu_N_stat[i]); 
-				Ncoll_pAl_N->SetPoint(i,ncoll_pAl[i],pAl_N_ncoll[i]); 
+				Ncoll_pAl_N->SetPoint(i,ncoll_pAl[i],pAl_N_ptsq[i]); 
 				Ncoll_pAl_N->SetPointError(i,0,pAl_N_stat[i]); 
 			}
 		}
