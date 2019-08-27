@@ -15,6 +15,11 @@ void Draw_dNpT_pp()
 	const int nColor_pp[narm] = {1, 2};
 
 	const float pol_sys_pp[narm] = {0.12, 0.12};
+	TH1D *hsys_pol_pt[narm];
+	TFile *infile_pol_sys_pp = new TFile("Run15pp200_dimuon_sys_check_pol.root","read");
+	for (int iarm=0; iarm<narm; iarm++){
+		hsys_pol_pt[iarm] = (TH1D*)infile_pol_sys_pp->Get(Form("hsys_pt_%d",iarm));
+	}
 
 	TH1F *Ypp[narm];
 	TH1F *Ypp_SYS_FRAC_ERR[narm];
@@ -77,7 +82,11 @@ void Draw_dNpT_pp()
 
 		double ratio = yy0 / yy1;
 		double err = ratio * sqrt(pow(yy0_err/yy0,2) + pow(yy1_err/yy1,2));
-		double sys_err = ratio * sqrt(pow(yy0_syserr,2) + pow(yy1_syserr,2) - pow(pol_sys_pp[0],2) - pow(pol_sys_pp[1],2));
+		//cout << yy0_syserr << " " << yy1_syserr << endl;
+		double pol_sys_pp_arm0 = hsys_pol_pt[0]->GetBinContent(hsys_pol_pt[0]->FindBin(xx));
+		double pol_sys_pp_arm1 = hsys_pol_pt[1]->GetBinContent(hsys_pol_pt[1]->FindBin(xx));
+		//double sys_err = ratio * sqrt(pow(yy0_syserr,2) + pow(yy1_syserr,2) - pow(pol_sys_pp[0],2) - pow(pol_sys_pp[1],2));
+		double sys_err = ratio * sqrt(pow(yy0_syserr,2) + pow(yy1_syserr,2) - pow(pol_sys_pp_arm0,2) - pow(pol_sys_pp_arm1,2));
 
 		gr_ratio->SetPoint(ipt, xx, ratio); 
 		gr_ratio->SetPointError(ipt, 0, err); 
