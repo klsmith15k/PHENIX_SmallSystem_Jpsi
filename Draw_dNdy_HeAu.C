@@ -3,6 +3,7 @@
 void Draw_dNdy_HeAu(){
 
 	const bool bWRITE = false;
+	const bool bSAVE = false;
 
 	SetStyle();
 
@@ -661,5 +662,13 @@ void Draw_dNdy_HeAu(){
 		}//icent
 
 	}//bWRITE
+
+	if ( bSAVE ){
+		c10->cd();
+		c10->SaveAs("pdf/fig_dNdy_HeAu.pdf");
+
+		c12->cd();
+		c12->SaveAs("pdf/fig_RAB_y_HeAu.pdf");
+	}
 
 }

@@ -3,6 +3,8 @@
 void Draw_dNpT_pp()
 {
 
+	const bool bSAVE = false;
+
 	SetStyle();
 
 	TFile *file_pp = new TFile("Ypp_vs_pT.root","read");
@@ -130,6 +132,11 @@ void Draw_dNpT_pp()
 
 	gr_ratio_sys->Draw("2");
 	gr_ratio->Draw("p");
+
+	if ( bSAVE ){
+		c00->cd();
+		c00->SaveAs("pdf/fig_dNdpT_pp.pdf");
+	}
 
 
 }

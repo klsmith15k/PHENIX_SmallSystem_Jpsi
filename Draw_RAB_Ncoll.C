@@ -2,6 +2,8 @@
 
 void Draw_RAB_Ncoll(){
 
+	const bool bSAVE = false;
+
 	SetStyle();
 
 	TFile *infile_pAu = new TFile("RAB_y_Ncoll_pAu200.root","read");
@@ -101,6 +103,13 @@ void Draw_RAB_Ncoll(){
 
 		hRAB_Ncoll_HeAu_sys[iarm]->Draw("2");
 		hRAB_Ncoll_HeAu[iarm]->Draw("P");
+	}
+
+	if ( bSAVE ){
+		for (int iarm=0; iarm<narm; iarm++){
+			c13[iarm]->cd();
+			c13[iarm]->SaveAs(Form("pdf/fig_RAB_Ncoll_arm%d.pdf",iarm));
+		}//iarm
 	}
 
 

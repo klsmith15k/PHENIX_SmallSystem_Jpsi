@@ -2,6 +2,7 @@
 
 void Draw_dNpT_all()
 {
+	const bool bSAVE = false;
 
 	SetStyle();
 
@@ -69,7 +70,6 @@ void Draw_dNpT_all()
 	double YpAu_sys_array[ncentbin_pAu][narm][nptbin_pAu] = {0};
 	double YpAl_sys_array[ncentbin_pAl][narm][nptbin_pAl] = {0};
 	double YHeAu_sys_array[ncentbin_HeAu][narm][nptbin_HeAu] = {0};
-
 
 	TH1F *YpAu[ncentbin_pAu][narm];
 	TH1F *YpAl[ncentbin_pAl][narm];
@@ -219,7 +219,7 @@ void Draw_dNpT_all()
 		htmp->GetXaxis()->SetTitleOffset(1.0);
 
 		{
-			TLegend *leg = new TLegend(0.2,0.15,0.65,0.32);
+			TLegend *leg = new TLegend(0.18,0.15,0.73,0.32);
 			leg->SetFillStyle(0);
 			leg->SetBorderSize(0);
 			leg->SetNColumns(2);
@@ -352,6 +352,23 @@ void Draw_dNpT_all()
 			leg->Draw();
 		}
 	}
+
+	if ( bSAVE ){
+
+		for (int iarm=0; iarm<narm; iarm++){
+
+			c00[iarm]->cd();
+			c00[iarm]->SaveAs(Form("pdf/fig_dNdpT_pAu_arm%d.pdf",iarm));
+
+			c01[iarm]->cd();
+			c01[iarm]->SaveAs(Form("pdf/fig_dNdpT_pAl_arm%d.pdf",iarm));
+
+			c02[iarm]->cd();
+			c02[iarm]->SaveAs(Form("pdf/fig_dNdpT_HeAu_arm%d.pdf",iarm));
+
+		}//iarm
+
+	}//bSAVE
 
 }
 
