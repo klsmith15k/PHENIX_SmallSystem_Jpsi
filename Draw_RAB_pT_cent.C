@@ -889,21 +889,21 @@ void Draw_RAB_pT_cent()
  
   
   ///////////////////////////////////////////////////////// RAB set marker color (comment out everything else)
-   gr_pAu_05_N->SetMarkerColor(kBlue);
-  gr_pAu_510_N->SetMarkerColor(kBlack); 
-  gr_pAu_1020_N->SetMarkerColor(kViolet); 
-  gr_pAu_020_N->SetMarkerColor(kRed); 
-  gr_pAu_2040_N->SetMarkerColor(kCyan); 
-  gr_pAu_4060_N->SetMarkerColor(kGreen); 
-  gr_pAu_6084_N->SetMarkerColor(kMagenta); 
+  //  gr_pAu_05_N->SetMarkerColor(kBlue);
+  // gr_pAu_510_N->SetMarkerColor(kBlack); 
+  // gr_pAu_1020_N->SetMarkerColor(kViolet); 
+  // gr_pAu_020_N->SetMarkerColor(kRed); 
+  // gr_pAu_2040_N->SetMarkerColor(kCyan); 
+  // gr_pAu_4060_N->SetMarkerColor(kGreen); 
+  // gr_pAu_6084_N->SetMarkerColor(kMagenta); 
 
   // gr_pAu_05_S->SetMarkerColor(kMagenta); 
-   // gr_pAu_510_S->SetMarkerColor(kBlue); 
-   // gr_pAu_1020_S->SetMarkerColor(kBlue); 
-  // gr_pAu_020_S->SetMarkerColor(kBlue); 
-  // gr_pAu_2040_S->SetMarkerColor(kBlue); 
-  // gr_pAu_4060_S->SetMarkerColor(kBlue); 
-  // gr_pAu_6084_S->SetMarkerColor(kBlue); 
+  //  gr_pAu_510_S->SetMarkerColor(kBlue); 
+  //  gr_pAu_1020_S->SetMarkerColor(kBlack); 
+  gr_pAu_020_S->SetMarkerColor(kRed); 
+  // gr_pAu_2040_S->SetMarkerColor(kViolet); 
+  // gr_pAu_4060_S->SetMarkerColor(kGreen); 
+  // gr_pAu_6084_S->SetMarkerColor(kCyan); 
 
   // gr_pAl_020_N->SetMarkerColor(kBlue);
   // gr_pAl_2040_N->SetMarkerColor(kBlue); 
@@ -921,21 +921,21 @@ void Draw_RAB_pT_cent()
   // gr_HeAu_020_S->SetMarkerColor(kBlue); 
    ///////////////////////////////////////////////////////////////  Type B set marker color
 
-   gr_pAu_05_N_sys->SetMarkerColor(kBlue);  
-   gr_pAu_510_N_sys->SetMarkerColor(kBlack);  
-  gr_pAu_1020_N_sys->SetMarkerColor(kViolet);  
-   gr_pAu_020_N_sys->SetMarkerColor(kRed);  
-   gr_pAu_2040_N_sys->SetMarkerColor(kCyan);  
-   gr_pAu_4060_N_sys->SetMarkerColor(kGreen);  
-   gr_pAu_6084_N_sys->SetMarkerColor(kMagenta);  
+  //  gr_pAu_05_N_sys->SetMarkerColor(kBlue);  
+  //  gr_pAu_510_N_sys->SetMarkerColor(kBlack);  
+  // gr_pAu_1020_N_sys->SetMarkerColor(kViolet);  
+  //  gr_pAu_020_N_sys->SetMarkerColor(kRed);  
+  //  gr_pAu_2040_N_sys->SetMarkerColor(kCyan);  
+  //  gr_pAu_4060_N_sys->SetMarkerColor(kGreen);  
+  //  gr_pAu_6084_N_sys->SetMarkerColor(kMagenta);  
 
-  // gr_pAu_05_S_sys->SetMarkerColor(kBlue);  
+  // gr_pAu_05_S_sys->SetMarkerColor(kMagenta);  
   // gr_pAu_510_S_sys->SetMarkerColor(kBlue);  
-  // gr_pAu_1020_S_sys->SetMarkerColor(kBlue);  
-  // gr_pAu_020_S_sys->SetMarkerColor(kBlue);  
-  // gr_pAu_2040_S_sys->SetMarkerColor(kBlue);  
-  // gr_pAu_4060_S_sys->SetMarkerColor(kBlue);  
-  // gr_pAu_6084_S_sys->SetMarkerColor(kBlue);  
+  // gr_pAu_1020_S_sys->SetMarkerColor(kBlack);  
+  gr_pAu_020_S_sys->SetMarkerColor(kRed);  
+  // gr_pAu_2040_S_sys->SetMarkerColor(kViolet);  
+  // gr_pAu_4060_S_sys->SetMarkerColor(kGreen);  
+  // gr_pAu_6084_S_sys->SetMarkerColor(kCyan);  
 
   // gr_pAl_020_N_sys->SetMarkerColor(kBlue); 
   // gr_pAl_2040_N_sys->SetMarkerColor(kBlue);  
@@ -955,21 +955,21 @@ void Draw_RAB_pT_cent()
 
    ///////////////////////////////////////////////// Set Line Color Type B box
 
-   gr_pAu_05_N_sys->SetLineColor(kBlue);  
-  gr_pAu_510_N_sys->SetLineColor(kBlack);  
-  gr_pAu_1020_N_sys->SetLineColor(kViolet);  
-  gr_pAu_020_N_sys->SetLineColor(kRed);  
-  gr_pAu_2040_N_sys->SetLineColor(kCyan);  
-  gr_pAu_4060_N_sys->SetLineColor(kGreen);  
-  gr_pAu_6084_N_sys->SetLineColor(kMagenta);  
+  //  gr_pAu_05_N_sys->SetLineColor(kBlue);  
+  // gr_pAu_510_N_sys->SetLineColor(kBlack);  
+  // gr_pAu_1020_N_sys->SetLineColor(kViolet);  
+  // gr_pAu_020_N_sys->SetLineColor(kRed);  
+  // gr_pAu_2040_N_sys->SetLineColor(kCyan);  
+  // gr_pAu_4060_N_sys->SetLineColor(kGreen);  
+  // gr_pAu_6084_N_sys->SetLineColor(kMagenta);  
 
-  // gr_pAu_05_S_sys->SetLineColor(kBlue);  
+  // gr_pAu_05_S_sys->SetLineColor(kMagenta);  
   // gr_pAu_510_S_sys->SetLineColor(kBlue);  
-  // gr_pAu_1020_S_sys->SetLineColor(kBlue);  
-  // gr_pAu_020_S_sys->SetLineColor(kBlue);  
-  // gr_pAu_2040_S_sys->SetLineColor(kBlue);  
-  // gr_pAu_4060_S_sys->SetLineColor(kBlue);  
-  // gr_pAu_6084_S_sys->SetLineColor(kBlue);  
+  // gr_pAu_1020_S_sys->SetLineColor(kBlack);  
+  gr_pAu_020_S_sys->SetLineColor(kRed);  
+  // gr_pAu_2040_S_sys->SetLineColor(kViolet);  
+  // gr_pAu_4060_S_sys->SetLineColor(kGreen);  
+  // gr_pAu_6084_S_sys->SetLineColor(kCyan);  
 
   // gr_pAl_020_N_sys->SetLineColor(kBlue); 
   // gr_pAl_2040_N_sys->SetLineColor(kBlue);  
@@ -989,21 +989,21 @@ void Draw_RAB_pT_cent()
 
   ///////////////////////////////////////////////// Set Fill Color Type B box
 
- gr_pAu_05_N_sys->SetFillColor(kBlue);  
-  gr_pAu_510_N_sys->SetFillColor(kBlack);  
-  gr_pAu_1020_N_sys->SetFillColor(kViolet);  
-  gr_pAu_020_N_sys->SetFillColor(kRed);  
-  gr_pAu_2040_N_sys->SetFillColor(kCyan);  
-  gr_pAu_4060_N_sys->SetFillColor(kGreen);  
-  gr_pAu_6084_N_sys->SetFillColor(kMagenta);  
+ // gr_pAu_05_N_sys->SetFillColor(kBlue);  
+ //  gr_pAu_510_N_sys->SetFillColor(kBlack);  
+ //  gr_pAu_1020_N_sys->SetFillColor(kViolet);  
+ //  gr_pAu_020_N_sys->SetFillColor(kRed);  
+ //  gr_pAu_2040_N_sys->SetFillColor(kCyan);  
+ //  gr_pAu_4060_N_sys->SetFillColor(kGreen);  
+ //  gr_pAu_6084_N_sys->SetFillColor(kMagenta);  
 
-  // gr_pAu_05_S_sys->SetFillColor(kBlue);  
-  // gr_pAu_510_S_sys->SetFillColor(kBlue);  
-  // gr_pAu_1020_S_sys->SetFillColor(kBlue);  
-  // gr_pAu_020_S_sys->SetFillColor(kBlue);  
-  // gr_pAu_2040_S_sys->SetFillColor(kBlue);  
-  // gr_pAu_4060_S_sys->SetFillColor(kBlue);  
-  // gr_pAu_6084_S_sys->SetFillColor(kBlue);  
+ // gr_pAu_05_S_sys->SetFillColor(kMagenta);  
+ // gr_pAu_510_S_sys->SetFillColor(kBlue);  
+ // gr_pAu_1020_S_sys->SetFillColor(kBlack);  
+  gr_pAu_020_S_sys->SetFillColor(kRed);  
+  // gr_pAu_2040_S_sys->SetFillColor(kViolet);  
+  // gr_pAu_4060_S_sys->SetFillColor(kGreen);  
+  // gr_pAu_6084_S_sys->SetFillColor(kCyan);  
 
   // gr_pAl_020_N_sys->SetFillColor(kBlue); 
   // gr_pAl_2040_N_sys->SetFillColor(kBlue);  
@@ -1022,21 +1022,21 @@ void Draw_RAB_pT_cent()
   // gr_HeAu_4088_S_sys->SetFillColor(kBlue)
 
   ////////////////////////////////////////////////////// Select arrays to plot (comment out everything else)
-  gr_pAu_05_N->Draw("AP");
-  gr_pAu_510_N->Draw("P"); 
-  gr_pAu_1020_N->Draw("P"); 
-  gr_pAu_020_N->Draw("P"); 
-  gr_pAu_2040_N->Draw("P"); 
-  gr_pAu_4060_N->Draw("P"); 
-  gr_pAu_6084_N->Draw("P"); 
+  // gr_pAu_05_N->Draw("AP");
+  // gr_pAu_510_N->Draw("P"); 
+  // gr_pAu_1020_N->Draw("P"); 
+  // gr_pAu_020_N->Draw("P"); 
+  // gr_pAu_2040_N->Draw("P"); 
+  // gr_pAu_4060_N->Draw("P"); 
+  // gr_pAu_6084_N->Draw("P"); 
 
-  // gr_pAu_05_S->Draw("P"); 
+  // gr_pAu_05_S->Draw("AP"); 
   // gr_pAu_510_S->Draw("P"); 
-  // gr_pAu_1020_S->Draw("AP"); 
-  // gr_pAu_020_S->Draw("AP"); 
-  // gr_pAu_2040_S->Draw("AP"); 
-  // gr_pAu_4060_S->Draw("AP"); 
-  // gr_pAu_6084_S->Draw("AP"); 
+  // gr_pAu_1020_S->Draw("P"); 
+  gr_pAu_020_S->Draw("AP"); 
+  // gr_pAu_2040_S->Draw("P"); 
+  //  gr_pAu_4060_S->Draw("P"); 
+  //  gr_pAu_6084_S->Draw("P"); 
 
   // gr_pAl_020_N->Draw("AP");
   // gr_pAl_2040_N->Draw("AP"); 
@@ -1055,21 +1055,21 @@ void Draw_RAB_pT_cent()
       
   ////////////////////////////////////////////////////////////////////////////////// Add systematic uncertainty boxes
 
-  gr_pAu_05_N_sys->Draw("e2same");  
-  gr_pAu_510_N_sys->Draw("e2same");  
-  gr_pAu_1020_N_sys->Draw("e2same");  
-  gr_pAu_020_N_sys->Draw("e2same");  
-  gr_pAu_2040_N_sys->Draw("e2same");  
-  gr_pAu_4060_N_sys->Draw("e2same");  
-  gr_pAu_6084_N_sys->Draw("e2same");  
+  // gr_pAu_05_N_sys->Draw("e2same");  
+  // gr_pAu_510_N_sys->Draw("e2same");  
+  // gr_pAu_1020_N_sys->Draw("e2same");  
+  // gr_pAu_020_N_sys->Draw("e2same");  
+  // gr_pAu_2040_N_sys->Draw("e2same");  
+  // gr_pAu_4060_N_sys->Draw("e2same");  
+  // gr_pAu_6084_N_sys->Draw("e2same");  
 
   // gr_pAu_05_S_sys->Draw("e2same");  
   // gr_pAu_510_S_sys->Draw("e2same");  
   // gr_pAu_1020_S_sys->Draw("e2same");  
-  // gr_pAu_020_S_sys->Draw("e2same");  
-  // gr_pAu_2040_S_sys->Draw("e2same");  
-  // gr_pAu_4060_S_sys->Draw("e2same");  
-  // gr_pAu_6084_S_sys->Draw("e2same");  
+  gr_pAu_020_S_sys->Draw("e2same");  
+  //  gr_pAu_2040_S_sys->Draw("e2same");  
+  //  gr_pAu_4060_S_sys->Draw("e2same");  
+  //  gr_pAu_6084_S_sys->Draw("e2same");  
 
   // gr_pAl_020_N_sys->Draw("e2same"); 
   // gr_pAl_2040_N_sys->Draw("e2same");  
@@ -1101,18 +1101,18 @@ void Draw_RAB_pT_cent()
   leg->SetFillColor(0); 
   leg->SetTextSize(0.03); 
 
-   leg->AddEntry(gr_pAu_05_N, "Run15pAu, N 0-5 ", "p"); 
-  leg->AddEntry(gr_pAu_510_N, "Run15pAu, N 5-10 ", "p"); 
-  leg->AddEntry(gr_pAu_1020_N, "Run15pAu, N 10-20 ", "p"); 
-  leg->AddEntry(gr_pAu_020_N, "Run15pAu, N 0-20 ", "p"); 
-  leg->AddEntry(gr_pAu_2040_N, "Run15pAu, N 20-40 ", "p"); 
-  leg->AddEntry(gr_pAu_4060_N, "Run15pAu, N 40-60 ", "p"); 
-  leg->AddEntry(gr_pAu_6084_N, "Run15pAu, N 60-84 ", "p"); 
+  //  leg->AddEntry(gr_pAu_05_N, "Run15pAu, N 0-5 ", "p"); 
+  // leg->AddEntry(gr_pAu_510_N, "Run15pAu, N 5-10 ", "p"); 
+  // leg->AddEntry(gr_pAu_1020_N, "Run15pAu, N 10-20 ", "p"); 
+  // leg->AddEntry(gr_pAu_020_N, "Run15pAu, N 0-20 ", "p"); 
+  // leg->AddEntry(gr_pAu_2040_N, "Run15pAu, N 20-40 ", "p"); 
+  // leg->AddEntry(gr_pAu_4060_N, "Run15pAu, N 40-60 ", "p"); 
+  // leg->AddEntry(gr_pAu_6084_N, "Run15pAu, N 60-84 ", "p"); 
 
-  //leg->AddEntry(gr_pAu_05_S, "Run15pAu, S 0-5 ", "p"); 
+  // leg->AddEntry(gr_pAu_05_S, "Run15pAu, S 0-5 ", "p"); 
   // leg->AddEntry(gr_pAu_510_S, "Run15pAu, S 5-10 ", "p"); 
   // leg->AddEntry(gr_pAu_1020_S, "Run15pAu, S 10-20 ", "p"); 
-  // leg->AddEntry(gr_pAu_020_S, "Run15pAu, S 0-20 ", "p"); 
+  leg->AddEntry(gr_pAu_020_S, "Run15pAu, S 0-20 ", "p"); 
   // leg->AddEntry(gr_pAu_2040_S, "Run15pAu, S 20-40 ", "p"); 
   // leg->AddEntry(gr_pAu_4060_S, "Run15pAu, S 40-60 ", "p"); 
   // leg->AddEntry(gr_pAu_6084_S, "Run15pAu, S 60-84 ", "p"); 
