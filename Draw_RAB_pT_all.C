@@ -19,7 +19,7 @@ void Draw_RAB_pT_all()
 	const int narm = 2;
 	const int nptbin_pAu = 19;
 	const int nptbin_pAl = 18;
-	const int nptbin_HeAu = 13;
+	const int nptbin_HeAu = 15;
 
 	const int ncentbin_pAu = 7;
 	const int ncentbin_pAl = 3;
@@ -110,7 +110,7 @@ void Draw_RAB_pT_all()
 	//plot arrays
 	double pt_array_pAu[nptbin_pAu] =  {0.125,0.375,0.625,0.875,1.125,1.375,1.625,1.875,2.125,2.375,2.625,2.875,3.125,3.375,3.625,3.875,4.25,4.75,6.0};
 	double pt_array_pAl[nptbin_pAl] =  {0.125,0.375,0.625,0.875,1.125,1.375,1.625,1.875,2.125,2.375,2.625,2.875,3.125,3.375,3.625,3.875,4.5,6.0};
-	double pt_array_HeAu[nptbin_HeAu] = {0.125,0.375,0.625,0.875,1.125,1.375,1.625,1.875,2.125,2.375,2.75,3.25,3.75};
+	double pt_array_HeAu[nptbin_HeAu] = {0.125,0.375,0.625,0.875,1.125,1.375,1.625,1.875,2.125,2.375,2.75,3.25,3.75, 4.5, 6.0};
 
 	for (int icent=0; icent<ncentbin_pAu; icent++){
 		for (int iarm=0; iarm<narm; iarm++){
@@ -310,7 +310,7 @@ void Draw_RAB_pT_all()
 		gPad->SetRightMargin(0.00);
 		gPad->SetLeftMargin(0.14);
 		gPad->SetBottomMargin(0.16);
-		htmp = (TH1F*)gPad->DrawFrame(0,0,4.8,2.5);
+		htmp = (TH1F*)gPad->DrawFrame(0,0,6.8,2.5);
 		SetHistoStyle("p_{T} (GeV/c)","R_{AB}","",20,18);
 		htmp->GetYaxis()->SetTitleOffset(0.9);
 		htmp->GetXaxis()->SetTitleOffset(1.0);
@@ -329,7 +329,7 @@ void Draw_RAB_pT_all()
 			line->Draw();
 
 			float global_sys = sqrt(Ncoll_HeAu_sys[icent]*Ncoll_HeAu_sys[icent] + BiasF_HeAu_sys[icent]*BiasF_HeAu_sys[icent] + 0.101*0.101);
-			TBox *box = new TBox(4.65,1-global_sys,4.8,1+global_sys);
+			TBox *box = new TBox(7.25,1-global_sys,7.5,1+global_sys);
 			box->SetFillStyle(1000);
 			box->SetFillColorAlpha(1,0.5);
 			box->Draw();
